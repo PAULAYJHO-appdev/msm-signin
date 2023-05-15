@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: actors
+# Table name: directors
 #
 #  id         :integer          not null, primary key
 #  bio        :text
@@ -10,7 +10,6 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-class Actor < ApplicationRecord
-  has_many :characters
-  has_many :filmography, :through => :characters, :source => :movie
+class Director < ApplicationRecord
+  has_many :filmography, :class_name => "Movie"
 end
